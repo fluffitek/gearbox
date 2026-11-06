@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"></link>
+    </head>
+    <body>
+        
+        <div class="window">
+            <div class="slidecontainer">
+                <input type="range" min="1" max="70" value="0" id="mphslider" class="slider">
+            </div>
+            
+            <p class="dashboard"><b>MPH:</b> <span id="mph">0</span>mph <b>Gear:</b> <span id="mode">P</span><span id="gear"></span></p>
+        </div>
+
+        
+        <div class="window">
+            <p>In order to set options, either press the key indicated on the button or click the button with your mouse.</p>
+            <p>Modes:</p>
+            <button onclick="send('/set_r')">R</button>
+            <button onclick="send('/set_p')">P</button>
+            <button onclick="send('/set_d')">D</button>
+            <button onclick="send('/set_m')">M</button>
+            <div id="manual" class="height-transition hide">
+                <p>Manual Gears:</p>
+                <button onclick="send('/gear_up')">↑</button>
+                <button onclick="send('/gear_down')">↓</button>
+            </div>
+            <p>Acceleration / Break</p>
+            <button id="acel">W</button>
+            <button id="brk">S</button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
